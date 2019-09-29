@@ -17,7 +17,7 @@ exports.verifyEmail = (req,res) => {
                 if(err) 
                     res.status(500).send(err);
                 else {
-                    res.redirect('http://localhost:3000/uyelik/giris'); // verification completed successfully.
+                    res.redirect(process.env.FRONTEND_LOGIN_URI); // verification completed successfully.
                 }
             })
          }
