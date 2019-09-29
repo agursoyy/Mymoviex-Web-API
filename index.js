@@ -5,8 +5,7 @@ let apiRoutes = require("./api-routes")
 let bodyParser = require("body-parser");
 let mongoose = require('mongoose');
 var cors = require('cors');
-const dotenv = require("dotenv");
-dotenv.config();
+
 
 // Initialize the app
 let app = express();

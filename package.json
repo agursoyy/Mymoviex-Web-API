@@ -8,7 +8,7 @@
   "description": " Ban api for movie project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "test": "mocha"
   },
   "author": "Alptekin Gursoy",
@@ -24,6 +24,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.6.8",
     "nodemailer": "^6.3.0",
+    "nodemon": "^1.19.3",
     "validator": "^11.1.0"
   },
   "devDependencies": {
