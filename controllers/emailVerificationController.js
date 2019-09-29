@@ -47,7 +47,7 @@ exports.sendEmailVerification = (userId,userMail,hostname) => {
             {
                 expiresIn: '1d'
             },(err,emailToken) => {
-                const url = `${hostname}/api/confirmation/${emailToken}`;
+                const url = `https://${hostname}/api/confirmation/${emailToken}`;
                 transporter.sendMail({
                     to:  userMail,  // alptekin_1997@hotmail.com -> kendi mailim
                     subject : 'Email Confirmation',
