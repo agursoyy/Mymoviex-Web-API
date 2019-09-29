@@ -25,8 +25,8 @@ function createTransporter() {
     let transporter = nodemailer.createTransport({
         service: 'hotmail',
         auth: {
-            user: 'alptekin_1997@hotmail.com', // generated ethereal user
-            pass: 'Artist.1997' // generated ethereal password
+            user: process.env.EMAIL_VERIFICATION_MAIL, // generated ethereal user
+            pass: process.env.EMAIL.VERIFICATION_PASSWORD // generated ethereal password
         }
     });
     return transporter;
