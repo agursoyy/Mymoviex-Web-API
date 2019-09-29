@@ -1,6 +1,10 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.0",
+    "npm": "6.9.0"
+  },
   "description": " Ban api for movie project",
   "main": "index.js",
   "scripts": {
@@ -26,8 +30,5 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.2.0"
-  },
-  "engines": {
-    "node": "10.16.0"
   }
 }
