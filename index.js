@@ -5,7 +5,8 @@ let apiRoutes = require("./api-routes")
 let bodyParser = require("body-parser");
 let mongoose = require('mongoose');
 var cors = require('cors');
-
+const dotenv = require("dotenv");
+dotenv.config();
 
 // Initialize the app
 let app = express();
@@ -24,6 +25,7 @@ app.use('/api',apiRoutes);
 
 //mongoose.connect('mongodb://localhost/mymoviex', { useNewUrlParser: true,useCreateIndex: true});
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true,useCreateIndex: true});
+console.log(process.env.PORT);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
