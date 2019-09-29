@@ -24,6 +24,7 @@ app.use('/api',apiRoutes);
 // Launch app to listen to specified port
 
 mlabURI = "mongodb+srv://alp1997:artist2798@cluster0-sfjfp.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.Promise = global.Promise; // mongoose promises deprecated, use node - mongoosejs.com/docs/promises
 //mongoose.connect('mongodb://localhost/mymoviex', { useNewUrlParser: true,useCreateIndex: true});
 mongoose.connect(mlabURI, { useNewUrlParser: true,useCreateIndex: true});
 var db = mongoose.connection;
