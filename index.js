@@ -23,8 +23,9 @@ var port = process.env.PORT || 5000;
 app.use('/api',apiRoutes);
 // Launch app to listen to specified port
 
+mlabURI = "mongodb+srv://alp1997:artist2798@cluster0-sfjfp.mongodb.net/test?retryWrites=true&w=majority";
 //mongoose.connect('mongodb://localhost/mymoviex', { useNewUrlParser: true,useCreateIndex: true});
-mongoose.connect("mongodb+srv://alp1997:artist2798@cluster0-sfjfp.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true,useCreateIndex: true});
+mongoose.connect(mlabURI, { useNewUrlParser: true,useCreateIndex: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
