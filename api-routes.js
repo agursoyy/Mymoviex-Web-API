@@ -20,6 +20,10 @@ const emailVerificationController = require('./controllers/emailVerificationCont
 const forgetPasswordController = require('./controllers/forgetPassswordController');
 // Contact routes
 
+router.route('/message').get((req,res)=> {
+    res.send('Hello');
+});
+
 router.route('/users').get(userController.index);
 //router.route('/users/signup').post(signupController.signup);
 router.post('/users/signup',signupController.validateSignupInput,signupController.signup);
