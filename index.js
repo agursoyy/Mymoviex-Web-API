@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
  }));
 app.use(bodyParser.json());
 // Setup server port
-var port = process.env.PORT || 5000;
+var port = process.env.port || 5000;
 // Send message for default URL
 //app.get('/', (req, res) => res.send('Hello World with Express'));
 app.use('/api',apiRoutes);
