@@ -18,7 +18,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Setup server port
 var port = process.env.PORT || 5000;
-var mongoDd_URI = 'mongodb://localhost/mymoviex' || process.env.MONGO_URI; // first one for test.
 // Send message for default URL
 //app.get('/', (req, res) => res.send('Hello World with Express'));
 app.use('/api',apiRoutes);
@@ -26,7 +25,7 @@ app.use('/api',apiRoutes);
 
 mongoose.Promise = global.Promise; // mongoose promises deprecated, use node - mongoosejs.com/docs/promises
 //mongoose.connect('mongodb://localhost/mymoviex', { useNewUrlParser: true,useCreateIndex: true});
-mongoose.connect(mongoDd_URI, { useNewUrlParser: true,useCreateIndex: true});
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true,useCreateIndex: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
