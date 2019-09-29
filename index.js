@@ -24,8 +24,7 @@ app.use('/api',apiRoutes);
 // Launch app to listen to specified port
 
 //mongoose.connect('mongodb://localhost/mymoviex', { useNewUrlParser: true,useCreateIndex: true});
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true,useCreateIndex: true});
-console.log(process.env.PORT);
+mongoose.connect("mongodb+srv://alp1997:artist2798@cluster0-sfjfp.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true,useCreateIndex: true});
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
