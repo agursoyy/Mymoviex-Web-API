@@ -19,7 +19,7 @@ const userProfileController = require('./controllers/userProfileController');
 const emailVerificationController = require('./controllers/emailVerificationController');
 const forgetPasswordController = require('./controllers/forgetPassswordController');
 // Contact routes
-emailVerificationController.deneme();
+
 router.route('/message').get((req,res)=> {
     res.send('Hello');
 });

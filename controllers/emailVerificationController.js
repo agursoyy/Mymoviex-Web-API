@@ -3,8 +3,6 @@ let mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 var config = require('../config');
-const dotenv = require("dotenv");
-dotenv.config();
 const nodemailer = require('nodemailer');
 
 exports.verifyEmail = (req,res) => {
@@ -27,12 +25,13 @@ function createTransporter() {
     let transporter = nodemailer.createTransport({
         service: 'hotmail',
         auth: {
-            user: process.env.EMAIL_VERIFICATION_MAIL, // generated ethereal user
-            pass: process.env.EMAIL.VERIFICATION_PASSWORD // generated ethereal password
+            user: 'alptekin_1997@hotmail.com', // generated ethereal user
+            pass: 'Artist.1997' // generated ethereal password
         }
     });
     return transporter;
 }
+
 exports.sendEmailVerification = (userId,userMail) => {
         new Promise((resolve,reject) => {
             const transporter = createTransporter();
