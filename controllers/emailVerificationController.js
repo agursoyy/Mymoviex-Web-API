@@ -3,6 +3,8 @@ let mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
 var config = require('../config');
+const dotenv = require("dotenv");
+dotenv.config();
 const nodemailer = require('nodemailer');
 
 exports.verifyEmail = (req,res) => {
@@ -31,7 +33,6 @@ function createTransporter() {
     });
     return transporter;
 }
-
 exports.sendEmailVerification = (userId,userMail) => {
         new Promise((resolve,reject) => {
             const transporter = createTransporter();
