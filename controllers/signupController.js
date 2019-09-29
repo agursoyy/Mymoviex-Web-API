@@ -35,7 +35,7 @@ exports.signup = function (req, res) {
                 res.status(400).json(err);
             }
             else  {
-                emailVerificationController.sendEmailVerification(user._id,user.email);
+                emailVerificationController.sendEmailVerification(user._id,user.email,req.hostname);
                 res.status(201).send({
                     message: 'New user account created, please verify your email.',
                 });
