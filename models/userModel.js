@@ -49,7 +49,7 @@ var validateEmail = function(email) {
     return re.test(email)
 };
 
-// Export Contact model
+// Export User model
 var User = module.exports = mongoose.model('user', userSchema);
 module.exports.get = function (callback, limit) {
     User.find(callback).limit(limit);

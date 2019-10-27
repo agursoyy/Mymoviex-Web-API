@@ -5,13 +5,14 @@ var bcrypt = require('bcrypt');
 var config = require('../config');
 const {check, validationResult} = require('express-validator/check');
 const nodemailer = require('nodemailer');
-
+const dotenv = require("dotenv");
+dotenv.config();
 function createTransporter() {
     let transporter = nodemailer.createTransport({
         service: 'hotmail',
         auth: {
-            user: 'alptekin_1997@hotmail.com', // generated ethereal user
-            pass: 'Artist.1997' // generated ethereal password
+            user: process.env.EMAIL_VERIFICATION_MAIL, // generated ethereal user
+            pass: process.env.EMAIL_VERIFICATION_PASSWORD // generated ethereal password
         }
     });
     return transporter;

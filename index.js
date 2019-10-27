@@ -9,6 +9,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 // Initialize the app
+
 let app = express();
 app.use(cors());
 // Configure bodyparser to handle post requests

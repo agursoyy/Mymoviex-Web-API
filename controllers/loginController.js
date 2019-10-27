@@ -32,6 +32,7 @@ exports.validateLoginInput = [  // öncelik sırası önemlidir ona göre ayarl�
 ]
 
 exports.login = function(req,res) {
+    console.log('LOGIN');
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json(errors.array()); // bad request
@@ -49,6 +50,6 @@ exports.login = function(req,res) {
             }
         }); 
     }
- 
+
 };
 

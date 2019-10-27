@@ -36,7 +36,7 @@ function createTransporter() {
 }
 
 exports.sendEmailVerification = (userId,userMail,hostname) => {
-        new Promise((resolve,reject) => {
+        new Promise((resolve) => {
             const transporter = createTransporter();
             resolve(transporter);
         }).then(transporter => {
@@ -48,6 +48,7 @@ exports.sendEmailVerification = (userId,userMail,hostname) => {
                 expiresIn: '1d'
             },(err,emailToken) => {
                 const url = `https://${hostname}/api/confirmation/${emailToken}`;
+                console.log('MAIL SENDED');
                 transporter.sendMail({
                     to:  userMail,  // alptekin_1997@hotmail.com -> kendi mailim
                     subject : 'Email Confirmation',
@@ -56,6 +57,6 @@ exports.sendEmailVerification = (userId,userMail,hostname) => {
                 });
                 if(err)
                     console.error(err);
-            });
+            })
         })
 }

@@ -18,6 +18,7 @@ const  logoutController = require('./controllers/logoutController');
 const userProfileController = require('./controllers/userProfileController');
 const emailVerificationController = require('./controllers/emailVerificationController');
 const forgetPasswordController = require('./controllers/forgetPassswordController');
+const commentController = require('./controllers/commentController');
 // Contact routes
 
 router.route('/message').get((req,res)=> {
@@ -38,6 +39,9 @@ router.route('/users/favoriteIDs').get(userProfileController.favoriteIDs);
 router.route('/users/favorites').get(userProfileController.favorites);
 router.route('/users/addfavorite').post(userProfileController.addFavorite);
 router.route('/users/favorites/remove').delete(userProfileController.removeFromFavorites);
+router.route('/comments').get(commentController.getComments);
+router.post('/user/make-comment',commentController.validateMakeCommentInput,commentController.makeComment);
+router.route('/movie/comments/:movieId').get(commentController.getMovieComments);
 /*
 router.route('/users/:user_id')
     .get(userController.view)

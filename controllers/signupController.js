@@ -40,7 +40,7 @@ exports.signup = function (req, res) {
                     message: 'New user account created, please verify your email.',
                 });
             }
-    
+
         });
     }
  
