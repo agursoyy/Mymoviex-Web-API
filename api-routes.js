@@ -3,7 +3,6 @@ let jwt = require('jsonwebtoken')
 let config = require('./config')
 let User = require('./models/userModel');
 router.get('/', function (req, res) {
-    
     res.json({
         status: 'API Its Working',
         message: 'Welcome to RESTHub crafted with love!'
